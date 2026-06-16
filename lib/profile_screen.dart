@@ -406,8 +406,6 @@ class ProfileScreen extends StatelessWidget {
   }
 }
 
-//image sources: https://www.pexels.com and https://www.pexels.com
-
 class ProfileData extends StatelessWidget {
   final String title;
   final String value;

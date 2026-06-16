@@ -36,8 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void dispose() {
-    timer
-        .cancel(); //if screen is disposed - user closes the app or error in loading, cancel or stop the timer from starting at all
+    timer.cancel(); //if screen is disposed - user closes the app or error in loading, cancel or stop the timer from starting at all
     super.dispose();
   }
 
@@ -79,43 +78,6 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
         ],
       ),
-
-      //       body: Container(
-      //         width: double.infinity,
-      //         height: double.infinity,
-      //         decoration: const BoxDecoration(
-      //           image: DecorationImage(
-      //             image: AssetImage('assets/images/splash.jpg',),
-      //             fit: BoxFit.cover,
-      //           ),
-      //         ),
-      //         ),
-
-      // //         body: SizedBox(
-      // //   width: double.infinity,
-      // //   height: double.infinity,
-      // //   child: Image.asset(
-      // //     'assets/images/splash.jpg',
-      // //     fit: BoxFit.cover,
-      // //   ),
-      // // ),
-
-      //         const SizedBox(height: 20),
-
-      //             const Text(
-      //               "Cookpedia Marketplace App",
-      //               style: TextStyle(
-      //                 fontSize: 28,
-      //                 color: Colors.redAccent,
-      //                 fontWeight: FontWeight.bold,
-      //               ),
-      //             ),
-
-      //             const SizedBox(height: 180),
-
-      //             const CircularProgressIndicator(
-      //               color: Colors.redAccent,
-      //             ),
     );
   }
 }
