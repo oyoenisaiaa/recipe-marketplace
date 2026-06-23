@@ -34,6 +34,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  google_fonts: ^6.1.0
+  loading_animation_widget: ^1.2.0
 
 dev_dependencies:
   flutter_test:
@@ -51,23 +53,23 @@ dev_dependencies:
 
 flutter_icons:
   android: true
-  ios: true
-  image_path: "assets/launcher_icon.png"
+  ios: false
+  image_path: "assets/ic_launcher.png"
   adaptive_icon_background: "#ffffff"
-  adaptive_icon_foreground: "assets/launcher_icon.png"
+  adaptive_icon_foreground: "assets/ic_launcher.png"
 
 
 flutter_native_splash:
   color: "#ffffff"
-  image: "assets/native_splash.png"
+  image: "assets/ic_launcher.png"
   android: true
-  ios: true
+  ios: false
   web: true
   fullscreen: true #like a safeArea. covers full screen of the device
 
   android_12:
     icon_background_color: "#FFFFFF"
-    image: "assets/native_splash.png" #Android 12 splash prefers a more “icon-style” image (not wide logo with text)
+    image: "assets/ic_launcher.png" #Android 12 splash prefers a more “icon-style” image (not wide logo with text)
 
 
 # For information on the generic Dart part of this file, see the

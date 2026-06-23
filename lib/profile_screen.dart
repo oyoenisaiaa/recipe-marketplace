@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  final String name; //from register
+  final String email; //from login or register
+  final bool fromLogin; //determines what to display
+
+  const ProfileScreen({
+    super.key,
+    required this.name,
+    required this.fromLogin,
+    required this.email,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +19,7 @@ class ProfileScreen extends StatelessWidget {
 
       //addition to UI - FAB
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.cyan.shade600,
         child: const Icon(Icons.chat_bubble_outline, color: Colors.white),
         onPressed: () {
           ScaffoldMessenger.of(context).showSnackBar(
@@ -18,38 +27,7 @@ class ProfileScreen extends StatelessWidget {
           );
         },
       ),
-
-      //addition to UI - bottom navbar
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 1,
-        selectedItemColor: Colors.teal,
-        unselectedItemColor: Colors.grey,
-        type: BottomNavigationBarType.fixed,
-        onTap: (index) {
-          if (index != 1) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Feature coming soon!')),
-            );
-          }
-        },
-        //nav item list
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.restaurant_menu),
-            label: 'Recipes',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_border),
-            label: 'Favorites',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: 'Profile',
-          ),
-        ],
-      ),
-
+      
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -93,9 +71,15 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     const CircleAvatar(
                       radius: 50,
-                      backgroundImage: AssetImage('assets/chef.webp'),
+                      backgroundImage: NetworkImage(
+                        'https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?w=200&h=200&fit=crop',
+                      ),
                     ),
 
+                    // const CircleAvatar(
+                    //   radius: 50,
+                    //   backgroundImage: AssetImage('assets/chef.webp'),
+                    // ),
                     const SizedBox(width: 20),
 
                     Expanded(
@@ -119,9 +103,19 @@ class ProfileScreen extends StatelessWidget {
                 const SizedBox(height: 20),
 
                 //profile details
-                const Text(
-                  'Oyoenisai Andrew-Essien', //Ifeyinka Adeyemo - name of chef per image source
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                Text(
+                  fromLogin ? 'Welcome, ' : name, //shows name from auth
+                  style: const TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+
+                const SizedBox(height: 5),
+
+                Text(
+                  fromLogin ? email : email, //shows email from auth
+                  style: const TextStyle(color: Colors.grey, fontSize: 14),
                 ),
 
                 const Text('Chef', style: TextStyle(color: Colors.grey)),
@@ -155,9 +149,9 @@ class ProfileScreen extends StatelessWidget {
                       const SnackBar(content: Text('Feature coming soon!')),
                     );
                   },
-                  child: const Text(
+                  child: Text(
                     'More...',
-                    style: TextStyle(color: Colors.teal),
+                    style: TextStyle(color: Colors.cyan.shade600),
                   ),
                 ),
 
@@ -182,7 +176,7 @@ class ProfileScreen extends StatelessWidget {
                           vertical: 10,
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.teal, //current active tab
+                          color: Colors.cyan.shade600, //current active tab
                           borderRadius: BorderRadius.circular(12),
                         ),
 
@@ -217,10 +211,10 @@ class ProfileScreen extends StatelessWidget {
                                 horizontal: 12,
                                 vertical: 10,
                               ),
-                              child: const Text(
+                              child: Text(
                                 'Videos',
                                 style: TextStyle(
-                                  color: Colors.teal,
+                                  color: Colors.cyan.shade600,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -244,10 +238,10 @@ class ProfileScreen extends StatelessWidget {
                           horizontal: 12,
                           vertical: 10,
                         ),
-                        child: const Text(
+                        child: Text(
                           'Tag',
                           style: TextStyle(
-                            color: Colors.teal,
+                            color: Colors.cyan.shade600,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -458,12 +452,12 @@ class FoodCard extends StatelessWidget {
         showDialog(
           context: context,
           builder: (_) => AlertDialog(
-            title: const Text(
+            title: Text(
               'Recipe Updates',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
-                color: Colors.teal,
+                color: Colors.cyan.shade600,
               ),
             ),
             content: Column(
@@ -479,16 +473,16 @@ class FoodCard extends StatelessWidget {
                   value: true,
                   onChanged: null,
                   activeThumbColor: Colors.white,
-                  activeTrackColor: Colors.teal,
+                  activeTrackColor: Colors.cyan.shade600,
                 ),
               ],
             ),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context),
-                child: const Text(
+                child: Text(
                   'Close',
-                  style: TextStyle(color: Colors.teal),
+                  style: TextStyle(color: Colors.cyan.shade600),
                 ),
               ),
             ],
