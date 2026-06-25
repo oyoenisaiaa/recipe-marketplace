@@ -24,7 +24,7 @@ A Flutter application built as part of a UI replication and navigation practice 
 - Uses `initState()` and `Future.delayed` with `setState` to trigger automatic navigation after **3 seconds**
 - Navigates to the Login Screen using `Navigator.pushReplacement` (prevents returning to splash on back press)
 
-### 3. Authentication Flow
+### 3. Authentication Flow and Screens
 Users can:
 - Navigate between Login and Register screens
 - Enter and validate required information
@@ -32,7 +32,7 @@ Users can:
 
 ----
 
-**🔐 Login Screen**
+**🔐 Login Screen (`login_screen.dart`)**
 
 *Features:*
 - Email input field
@@ -42,21 +42,20 @@ Users can:
 - Navigation to Register Screen
 - Network image logo
 
-*Validation*
+*Validation:*
 - Email cannot be empty
 - Email must contain "@"
 - Password cannot be empty
 - Password must meet minimum length requirements
 
-*Navigation*
+*Navigation:*
 
 After successful login:
 - User is redirected to Main Screen
 - Email is passed through the constructor
 
-----
+**📝 Register Screen (`register_screen.dart`)** 
 
-**📝 Register Screen**  
 *Features:*
 - Full Name field
 - Email field
@@ -65,20 +64,22 @@ After successful login:
 - Password visibility toggles
 - Network image logo
 
-*Validation*
+*Validation:*
 - Name cannot be empty
 - Email must be valid
 - Password must be at least 6 characters
 - Confirm Password must match Password
 - Birth Date must be selected
 
-*Navigation*
+*Navigation:*
 
 After successful registration:
 - User is redirected to Main Screen
 - Name and Email are passed through constructors
 
-### 4. Main Screen (`main_screen.dart`)
+----
+
+### 3. Main Screen (`main_screen.dart`)
 Built using: `StatefulWidget`, `BottomNavigationBar` and `IndexedStack`
 
 **Why IndexedStack?**
@@ -95,6 +96,7 @@ Displays:
 - Welcome message
 - Registered user's name (when available)
 - User email
+
 
 *Cart, Profile, Notifications and Settings*
 
@@ -126,7 +128,6 @@ Built with `StatelessWidget`and displays:
 - Videos tab
 - Tag tab
 
----
 
 **🍲 Food Cards**
 
@@ -139,7 +140,8 @@ Reusable `FoodCard` widgets display:
 - Bookmark icon
 - Favorite icon
 
-*Card Interaction*  
+*Card Interaction* 
+
 Tapping a recipe card opens an AlertDialog containing:
 
 - Recipe Updates title
@@ -150,6 +152,7 @@ Tapping a recipe card opens an AlertDialog containing:
 ---
 
 **✨ Additional Features**  
+
 *Floating Action Button*
 - Chat icon
 - Displays: "Chat feature coming soon"
@@ -222,8 +225,7 @@ inside: android/app/src/main/AndroidManifest.xml
 1. Clone the repository - git clone <repository-url>
 2. Install dependencies - `flutter pub get`
 3. Run the application - `flutter run`
-4. Generate release APK - `flutter build apk --release`  
-*APK location*: build/app/outputs/flutter-apk/app-release.apk
+4. Generate release APK - `flutter build apk --release`  *APK location*: build/app/outputs/flutter-apk/app-release.apk
 
 ---
 
