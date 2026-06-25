@@ -33,6 +33,7 @@ Users can:
 ----
 
 **🔐 Login Screen**
+
 *Features:*
 - Email input field
 - Password input field
@@ -48,13 +49,14 @@ Users can:
 - Password must meet minimum length requirements
 
 *Navigation*
+
 After successful login:
 - User is redirected to Main Screen
 - Email is passed through the constructor
 
 ----
 
-**📝 Register Screen**
+**📝 Register Screen**  
 *Features:*
 - Full Name field
 - Email field
@@ -71,6 +73,7 @@ After successful login:
 - Birth Date must be selected
 
 *Navigation*
+
 After successful registration:
 - User is redirected to Main Screen
 - Name and Email are passed through constructors
@@ -79,18 +82,22 @@ After successful registration:
 Built using: `StatefulWidget`, `BottomNavigationBar` and `IndexedStack`
 
 **Why IndexedStack?**
+
 IndexedStack preserves screen state when switching between tabs and prevents unnecessary widget rebuilding.
 
 ----
 
 **Bottom Navigation Tabs**
+
 *Home*
+
 Displays:
 - Welcome message
 - Registered user's name (when available)
 - User email
 
 *Cart, Profile, Notifications and Settings*
+
 Displays:
 - Respective icons and tab labels
 
@@ -130,10 +137,11 @@ Reusable `FoodCard` widgets display:
 - Cooking duration
 - Rating badge
 - Bookmark icon
-- Favorite icon - filled red if `isFavorite: true`, outlined grey if false
+- Favorite icon
 
-*Card Interaction*
+*Card Interaction*  
 Tapping a recipe card opens an AlertDialog containing:
+
 - Recipe Updates title
 - Feature coming soon message
 - Toggle switch simulation
@@ -141,7 +149,7 @@ Tapping a recipe card opens an AlertDialog containing:
 
 ---
 
-**✨ Additional Features**
+**✨ Additional Features**  
 *Floating Action Button*
 - Chat icon
 - Displays: "Chat feature coming soon"
@@ -214,7 +222,7 @@ inside: android/app/src/main/AndroidManifest.xml
 1. Clone the repository - git clone <repository-url>
 2. Install dependencies - `flutter pub get`
 3. Run the application - `flutter run`
-4. Generate release APK - `flutter build apk --release`
+4. Generate release APK - `flutter build apk --release`  
 *APK location*: build/app/outputs/flutter-apk/app-release.apk
 
 ---
