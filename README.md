@@ -54,6 +54,7 @@ After successful login:
 - User is redirected to Main Screen
 - Email is passed through the constructor
 
+
 **📝 Register Screen (`register_screen.dart`)** 
 
 *Features:*
@@ -86,7 +87,7 @@ Built using: `StatefulWidget`, `BottomNavigationBar` and `IndexedStack`
 
 IndexedStack preserves screen state when switching between tabs and prevents unnecessary widget rebuilding.
 
-----
+---
 
 **Bottom Navigation Tabs**
 
@@ -102,6 +103,8 @@ Displays:
 
 Displays:
 - Respective icons and tab labels
+
+---
 
 ### 5. Profile Screen (`profile_screen.dart`)
 Built with `StatelessWidget`and displays:
@@ -127,6 +130,7 @@ Built with `StatelessWidget`and displays:
 - Recipe tab
 - Videos tab
 - Tag tab
+
 
 
 **🍲 Food Cards**
@@ -214,8 +218,7 @@ The application uses network images for:
 - Authentication screen logo
 - Profile image
 
-For Android devices, internet permission was added:
-<uses-permission android:name="android.permission.INTERNET"/>
+For Android devices, internet permission was added: <uses-permission android:name="android.permission.INTERNET"/>
 
 inside: android/app/src/main/AndroidManifest.xml
 
